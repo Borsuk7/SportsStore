@@ -1,0 +1,20 @@
+﻿@model Product
+
+<div class="card card-outline-primary m-1 р-1">
+    <div class="bg-faded р-1">
+        <h4>
+            <span style="margin-left:5px">@Model.Name</span>
+            <span class="badge badge-pill badge-primary" style="float:right; margin:5px">
+                <small>@Model.Price.ToString("c")</small>
+            </span>
+        </h4>
+    </div>
+    <form id="@Model.ID" asp-controller="Cart" asp-action="AddToCart" method="post">
+        <input type="hidden" asp-for="ID" />
+        <input type="hidden" name="ReturnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
+        <span class="card-text р-1" style="margin-left:5px">
+            @Model.Description
+            <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right; margin:5px">Add to Cart</button>
+        </span>
+    </form>
+</div>

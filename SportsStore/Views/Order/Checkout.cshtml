@@ -1,0 +1,40 @@
+﻿@model Order
+@{
+    ViewBag.Title = "Order";
+}
+<h2>Chech out now</h2>
+<p>Please enter your details, and we'll ship your goods right away!</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form action="Checkout" method="post">
+    <h3>Skip to</h3>
+    <div class="form-group">
+        <label asp-for="Name"></label><input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <h3>Address</h3>
+    <div class="form-group">
+        <label asp-for="Address"></label><input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+
+        <label asp-for="City"></label><input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country"></label><input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+
+    <hЗ>Options</hЗ>
+    <div class="checkbox">
+        <label>
+            <input asp-for="GiftWrap" /> Gift wrap these items
+        </label>
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-success" type="submit" value="Complete order" />
+    </div>
+</form>
