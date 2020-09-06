@@ -1,0 +1,25 @@
+﻿body {
+}
+
+.header {
+    background-color: black;
+}
+
+.logotext {
+    color: white;
+}
+
+.row.logo {
+    padding: 5px;
+}
+.summary-button {
+    margin: 5px;
+}
+
+.card {
+    padding: 5px;
+}
+
+.move-right {
+    float: right;
+}

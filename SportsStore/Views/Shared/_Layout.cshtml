@@ -6,6 +6,7 @@
     <title>@ViewBag.Title</title>
 
     <link rel="stylesheet" href="~/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/css/styles.css">
     <script src="~/lib/css/bootstrap.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -17,10 +18,10 @@
 
 </head>
 <body>
-    <div style="background-color:#000000" role="navigation">
-        <div class="row">
-            <text class="col navbar-brand" style="color:#ffffff; margin-left:5px">SPORTS STORE</text>
-            <div class="col-4 text-right" style="margin:5px">
+    <div class="header" role="navigation">
+        <div class="row logo">
+            <text class="col navbar-brand logotext">SPORTS STORE</text>
+            <div class="col-4 text-right">
                 @await Component.InvokeAsync("CartSummary")
             </div>
         </div>
