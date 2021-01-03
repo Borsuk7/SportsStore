@@ -21,6 +21,13 @@
                 <td class="text-right">@line.Product.Price.ToString("c")</td>
                 <td class="text-right">@((line.Quantity * line.Product.Price).ToString("c"))</td>
                 <td style="border:hidden; border-left:1px solid; background-color:white;">
+                    <form asp-action="AddSameToCart" method="post">
+                        <input type="hidden" name="productID"
+                               value="@line.Product.ID" />
+                        <input type="hidden" name="returnUrl"
+                               value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn-success">Add</button>
+                    </form>
                     <form asp-action="RemoveFromCart" method="post">
                         <input type="hidden" name="productID"
                                value="@line.Product.ID" />

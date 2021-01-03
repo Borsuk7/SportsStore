@@ -44,5 +44,18 @@ namespace SportsStore.Controllers
             }
             return RedirectToAction("Index", new { returnUrl });
         }
+
+        [HttpPost]
+        public RedirectToActionResult AddSameToCart(int productID, string returnUrl)
+        {
+            Product product = Repository.Products
+                                        .FirstOrDefault(p => p.ID == productID);
+            if (product != null)
+            {
+                Cart.AddItem(product, 1);
+            }
+            return RedirectToAction("Index", new { returnUrl });
+        }
+
     }
 }
